@@ -168,7 +168,7 @@ const deleteSearch = () => {
     .search-form__input {
       width: 100%;
       min-height: 48px;
-      padding-right: 16px;
+      padding: 12px 16px;
       padding-left: 48px;
       border: 1px solid $color-font-second;
       border-radius: 10px;
@@ -303,6 +303,7 @@ const deleteSearch = () => {
         min-height: 45px;
         padding-right: 91px;
         padding-left: 0;
+        padding-top: 0;
         padding-bottom: 6px;
         border: none;
         border-bottom: 1px solid $color-border;
