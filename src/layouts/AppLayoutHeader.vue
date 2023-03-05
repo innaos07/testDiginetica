@@ -83,6 +83,8 @@ import { ref } from 'vue';
 <style lang="scss">
 @import "@/assets/scss/variables.scss";
 .header {
+  margin-bottom: 24px;
+
   .header__body {
     display: flex;
     align-items: center;
@@ -145,17 +147,32 @@ import { ref } from 'vue';
       padding-left: 48px;
       border: 1px solid $color-font-second;
       border-radius: 10px;
+
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: inherit;
       background-image: url('@/assets/image/search.svg');
       background-repeat: no-repeat;
       background-position: 16px 12px;
 
+      &::placeholder {
+        font-family: 'Inter';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $color-font-second;
+      }
+
       &--active {
-        border-color: #73AFF4;
+        border-color: $color-light-blue;
       }
 
       &:hover,
       &:focus {
-        border-color: #73AFF4;
+        border-color: $color-light-blue;
         outline: none;
         transition: all 0.5s;
       }
@@ -207,8 +224,10 @@ import { ref } from 'vue';
 
   .menu__list {
     display: flex;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 5px;
     flex-wrap: wrap;
+    padding: 15.5px 0;
 
     .menu__link {
       font-family: 'Inter';
@@ -217,6 +236,27 @@ import { ref } from 'vue';
       line-height: 121%;
       color: #393939;
     }
+  }
+
+  @media (max-width: $xxl-width) {
+    .header__logo {
+      margin-left: 28px;
+    }
+
+    .search-form {
+      max-width: 479px;
+      min-width: 300px;
+    }
+  }
+
+  @media (max-width: $md-width) {
+    .header__logo, 
+    .header__btn,
+    .header__menu {
+      display: none;
+    }
+
+   
   }
 }
 </style>
