@@ -10,9 +10,9 @@
 
 body {
   display: flex;
-  overflow: hidden;
+  // overflow: hidden;
   flex-direction: column;
-  height: 100hv;
+  // height: 100 vh;
   background: $color-white;
   color: $color-font-main;
   font-family: 'PT Sans', 'Arial', sans-serif;

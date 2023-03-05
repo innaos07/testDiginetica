@@ -139,6 +139,19 @@ import { ref } from 'vue';
     position: relative;
     flex: 1;
     max-width: 983px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 12px;
+        left: 17px;
+        width: 24px;
+        height: 24px;
+        background-image: url('@/assets/image/search.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      }
+      
     
     .search-form__input {
       width: 100%;
@@ -154,9 +167,14 @@ import { ref } from 'vue';
       line-height: 150%;
 
       color: inherit;
-      background-image: url('@/assets/image/search.svg');
-      background-repeat: no-repeat;
-      background-position: 16px 12px;
+
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      // }
+      // background-image: url('@/assets/image/search.svg');
+      // background-repeat: no-repeat;
+      // background-position: 20px 15px;
 
       &::placeholder {
         font-family: 'Inter';
@@ -167,6 +185,7 @@ import { ref } from 'vue';
       }
 
       &--active {
+        padding-right: 114px;
         border-color: $color-light-blue;
       }
 
@@ -185,14 +204,17 @@ import { ref } from 'vue';
       cursor: pointer;   
 
       &--active {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
       } 
 
       &--delete {
         top: 14px;
         right: 83px;
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
         background-color: transparent;
         svg path {
           fill: #c2c2c2;
@@ -250,13 +272,97 @@ import { ref } from 'vue';
   }
 
   @media (max-width: $md-width) {
+    margin-bottom: 0;
+
+    .header__body {
+      padding-top: 8px;
+      padding-bottom: 12px;
+    }
+
+    .header__search {
+      margin: 0;
+    }
+
+    .search-form {
+      max-width: 100%;
+      width: 100%;
+      padding-left: 36px;
+      background-image: url('@/assets/image/arrow-back.svg');
+      background-repeat: no-repeat;
+      background-position: 0px 9px;
+      background-size: 20px 20px;
+
+      &::before {
+        display: none;
+      }
+
+      
+      
+      .search-form__input {
+      min-height: 45px;
+      padding-right: 91px;
+      padding-left: 0;
+      padding-bottom: 6px;
+      border: none;
+      border-bottom: 1px solid $color-border;
+      border-radius: 0;
+
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 88%;
+
+      color: inherit;
+
+      // &::placeholder {
+      //   font-family: 'Inter';
+      //   font-weight: 400;
+      //   font-size: 16px;
+      //   line-height: 150%;
+      //   color: $color-font-second;
+      // }
+
+      &--active {
+        padding-right: 127px;
+        border-color: $color-border;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: $color-brand;
+      
+      }
+      }
+
+      .search-form__btn {
+        &--delete {
+          top: 9px;
+          right: 91px;
+          width: 20px;
+          height: 20px;
+          svg {
+          width: 16.7px;
+          height: 16.7px;
+        }
+        }
+
+        &--search {
+          top: 0;
+          right: 0;
+          display: block;
+          border-radius: 5px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 88%;
+        }
+      }
+    }
+
     .header__logo, 
     .header__btn,
     .header__menu {
       display: none;
     }
-
-   
   }
 }
 </style>

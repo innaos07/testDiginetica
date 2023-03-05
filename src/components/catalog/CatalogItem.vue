@@ -240,6 +240,12 @@ const getImage = (image) => {
   @media (max-width: $md-width) {
     flex: 0 0 33.33%;
     padding: 0 6px;
+
+    .item-catalog__image, 
+    .item-catalog__name,
+    .item-catalog__prices {
+      margin-bottom: 12px;
+    }
   }
 
   @media (max-width: $sm-width) {
