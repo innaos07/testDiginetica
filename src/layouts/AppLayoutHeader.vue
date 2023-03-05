@@ -3,36 +3,49 @@
     <div class="container">
       <div class="header__body">
         <a class="header__logo logo" href="#">
-          <img src="../assets/image/logo.svg" class="logo__img" alt="logo">
+          <img src="../assets/image/logo.svg" class="logo__img" alt="logo" />
           <span class="logo__description">Логотип</span>
         </a>
 
         <a href="#" class="header__btn">Каталог</a>
 
         <form action="#" class="header__search search-form">
-          <input 
+          <input
             class="search-form__input"
-            :class="{ 'search-form__input--active' : isActiveInput }" 
-            type="text" 
-            name="search" 
+            :class="{ 'search-form__input--active': isActiveInput }"
+            type="text"
+            name="search"
             placeholder="Поиск по 100 000 товаров"
-            :value="search" 
+            :value="search"
             @input="setSearch"
           />
-          <button 
+          <button
             class="search-form__btn search-form__btn--delete"
-            :class="{ 'search-form__btn--active' : isActiveInput }"
+            :class="{ 'search-form__btn--active': isActiveInput }"
             @click="deleteSearch"
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0001 10C20.0001 15.5228 15.5229 20 10.0001 20C4.47721 20 6.10352e-05 15.5228 6.10352e-05 10C6.10352e-05 4.47715 4.47721 0 10.0001 0C15.5229 0 20.0001 4.47715 20.0001 10ZM13.7072 7.70711C14.0977 7.31658 14.0977 6.68342 13.7072 6.29289C13.3166 5.90237 12.6835 5.90237 12.293 6.29289L10.0001 8.58579L7.70717 6.29289C7.31664 5.90237 6.68348 5.90237 6.29295 6.29289C5.90243 6.68342 5.90243 7.31658 6.29295 7.70711L8.58585 10L6.29295 12.2929C5.90243 12.6834 5.90243 13.3166 6.29295 13.7071C6.68348 14.0976 7.31664 14.0976 7.70717 13.7071L10.0001 11.4142L12.293 13.7071C12.6835 14.0976 13.3166 14.0976 13.7072 13.7071C14.0977 13.3166 14.0977 12.6834 13.7072 12.2929L11.4143 10L13.7072 7.70711Z" fill="#333333"/>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M20.0001 10C20.0001 15.5228 15.5229 20 10.0001 20C4.47721 20 6.10352e-05 15.5228 6.10352e-05 10C6.10352e-05 4.47715 4.47721 0 10.0001 0C15.5229 0 20.0001 4.47715 20.0001 10ZM13.7072 7.70711C14.0977 7.31658 14.0977 6.68342 13.7072 6.29289C13.3166 5.90237 12.6835 5.90237 12.293 6.29289L10.0001 8.58579L7.70717 6.29289C7.31664 5.90237 6.68348 5.90237 6.29295 6.29289C5.90243 6.68342 5.90243 7.31658 6.29295 7.70711L8.58585 10L6.29295 12.2929C5.90243 12.6834 5.90243 13.3166 6.29295 13.7071C6.68348 14.0976 7.31664 14.0976 7.70717 13.7071L10.0001 11.4142L12.293 13.7071C12.6835 14.0976 13.3166 14.0976 13.7072 13.7071C14.0977 13.3166 14.0977 12.6834 13.7072 12.2929L11.4143 10L13.7072 7.70711Z"
+                fill="#333333"
+              />
             </svg>
-
           </button>
-          <button 
-            type="submit" 
-            class="search-form__btn search-form__btn--search btn" 
-            :class="{ 'search-form__btn--active' : isActiveInput }">Найти</button>
+          <button
+            type="submit"
+            class="search-form__btn search-form__btn--search btn"
+            :class="{ 'search-form__btn--active': isActiveInput }"
+          >
+            Найти
+          </button>
         </form>
 
         <nav class="header__menu menu">
@@ -48,36 +61,36 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-  const menuList = [
-    {
-      id: '1',
-      name: 'Информация о компании',
-      link: '#',
-    },
-    {
-      id: '2',
-      name: 'Контакты',
-      link: '#',
-    },
-    {
-      id: '3',
-      name: 'Полезные ссылки',
-      link: '#',
-    }
-  ];
-  const isActiveInput = ref(false);
-  const search = ref('');
+import { ref } from "vue";
+const menuList = [
+  {
+    id: "1",
+    name: "Информация о компании",
+    link: "#",
+  },
+  {
+    id: "2",
+    name: "Контакты",
+    link: "#",
+  },
+  {
+    id: "3",
+    name: "Полезные ссылки",
+    link: "#",
+  },
+];
+const isActiveInput = ref(false);
+const search = ref("");
 
-  const setSearch =(e)=> {    
-    e.target.value? isActiveInput.value = true : isActiveInput.value = false;
-    search.value = e.target.value.trim();
-  }
+const setSearch = (e) => {
+  e.target.value ? (isActiveInput.value = true) : (isActiveInput.value = false);
+  search.value = e.target.value.trim();
+};
 
-  const deleteSearch =()=> {
-    search.value = '';
-    isActiveInput.value = false;
-  }
+const deleteSearch = () => {
+  search.value = "";
+  isActiveInput.value = false;
+};
 </script>
 
 <style lang="scss">
@@ -108,7 +121,7 @@ import { ref } from 'vue';
     }
 
     .logo__description {
-      font-family: 'Inter';
+      font-family: "Inter";
       font-weight: 400;
       font-size: 16px;
       line-height: 118.8%;
@@ -124,7 +137,7 @@ import { ref } from 'vue';
     border: 1px solid $color-light-blue;
     border-radius: 8px;
 
-    font-family: 'Inter';
+    font-family: "Inter";
     font-weight: 500;
     font-size: 14px;
     line-height: 121%;
@@ -141,18 +154,17 @@ import { ref } from 'vue';
     max-width: 983px;
 
     &::before {
-        content: '';
-        position: absolute;
-        top: 12px;
-        left: 17px;
-        width: 24px;
-        height: 24px;
-        background-image: url('@/assets/image/search.svg');
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 17px;
+      width: 24px;
+      height: 24px;
+      background-image: url("@/assets/image/search.svg");
       background-repeat: no-repeat;
       background-position: center;
-      }
-      
-    
+    }
+
     .search-form__input {
       width: 100%;
       min-height: 48px;
@@ -161,23 +173,15 @@ import { ref } from 'vue';
       border: 1px solid $color-font-second;
       border-radius: 10px;
 
-      font-family: 'Inter';
+      font-family: "Inter";
       font-weight: 400;
       font-size: 16px;
       line-height: 150%;
 
       color: inherit;
 
-      // &::before {
-      //   content: '';
-      //   position: absolute;
-      // }
-      // background-image: url('@/assets/image/search.svg');
-      // background-repeat: no-repeat;
-      // background-position: 20px 15px;
-
       &::placeholder {
-        font-family: 'Inter';
+        font-family: "Inter";
         font-weight: 400;
         font-size: 16px;
         line-height: 150%;
@@ -200,15 +204,14 @@ import { ref } from 'vue';
     .search-form__btn {
       display: none;
       position: absolute;
-      content: ''; 
-      cursor: pointer;   
+      content: "";
+      cursor: pointer;
 
       &--active {
         display: flex;
         justify-content: center;
         align-items: center;
-
-      } 
+      }
 
       &--delete {
         top: 14px;
@@ -220,9 +223,9 @@ import { ref } from 'vue';
           fill: #c2c2c2;
         }
 
-        &:hover, 
+        &:hover,
         &:focus {
-            svg path {
+          svg path {
             fill: $color-font-main;
             transition: all 0.5s;
           }
@@ -252,7 +255,7 @@ import { ref } from 'vue';
     padding: 15.5px 0;
 
     .menu__link {
-      font-family: 'Inter';
+      font-family: "Inter";
       font-weight: 400;
       font-size: 14px;
       line-height: 121%;
@@ -287,7 +290,7 @@ import { ref } from 'vue';
       max-width: 100%;
       width: 100%;
       padding-left: 36px;
-      background-image: url('@/assets/image/arrow-back.svg');
+      background-image: url("@/assets/image/arrow-back.svg");
       background-repeat: no-repeat;
       background-position: 0px 9px;
       background-size: 20px 20px;
@@ -296,42 +299,29 @@ import { ref } from 'vue';
         display: none;
       }
 
-      
-      
       .search-form__input {
-      min-height: 45px;
-      padding-right: 91px;
-      padding-left: 0;
-      padding-bottom: 6px;
-      border: none;
-      border-bottom: 1px solid $color-border;
-      border-radius: 0;
+        min-height: 45px;
+        padding-right: 91px;
+        padding-left: 0;
+        padding-bottom: 6px;
+        border: none;
+        border-bottom: 1px solid $color-border;
+        border-radius: 0;
 
-      font-family: 'Inter';
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 88%;
+        font-family: "Inter";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 88%;
 
-      color: inherit;
+        &--active {
+          padding-right: 127px;
+          border-color: $color-border;
+        }
 
-      // &::placeholder {
-      //   font-family: 'Inter';
-      //   font-weight: 400;
-      //   font-size: 16px;
-      //   line-height: 150%;
-      //   color: $color-font-second;
-      // }
-
-      &--active {
-        padding-right: 127px;
-        border-color: $color-border;
-      }
-
-      &:hover,
-      &:focus {
-        border-color: $color-brand;
-      
-      }
+        &:hover,
+        &:focus {
+          border-color: $color-brand;
+        }
       }
 
       .search-form__btn {
@@ -341,9 +331,9 @@ import { ref } from 'vue';
           width: 20px;
           height: 20px;
           svg {
-          width: 16.7px;
-          height: 16.7px;
-        }
+            width: 16.7px;
+            height: 16.7px;
+          }
         }
 
         &--search {
@@ -358,7 +348,7 @@ import { ref } from 'vue';
       }
     }
 
-    .header__logo, 
+    .header__logo,
     .header__btn,
     .header__menu {
       display: none;
