@@ -97,6 +97,9 @@ const deleteSearch = () => {
 @import "@/assets/scss/variables.scss";
 .header {
   margin-bottom: 24px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
 
   .header__body {
     display: flex;
@@ -121,11 +124,16 @@ const deleteSearch = () => {
     }
 
     .logo__description {
-      font-family: "Inter";
-      font-weight: 400;
+      font-family: inherit;
       font-size: 16px;
       line-height: 118.8%;
       color: $color-font-dark;
+
+      &:hover,
+      &:focus {
+        color: $color-font-hover;
+        transition: all 0.5s;
+      }
     }
   }
 
@@ -137,11 +145,16 @@ const deleteSearch = () => {
     border: 1px solid $color-light-blue;
     border-radius: 8px;
 
-    font-family: "Inter";
     font-weight: 500;
-    font-size: 14px;
     line-height: 121%;
     color: $color-font-dark;
+
+    &:hover,
+    &:focus {
+      background: $color-light-blue;
+      color: $color-white;
+      transition: all 0.5s;
+    }
   }
 
   .header__search {
@@ -173,16 +186,14 @@ const deleteSearch = () => {
       border: 1px solid $color-font-second;
       border-radius: 10px;
 
-      font-family: "Inter";
-      font-weight: 400;
+      font-family: inherit;
       font-size: 16px;
       line-height: 150%;
 
       color: inherit;
 
       &::placeholder {
-        font-family: "Inter";
-        font-weight: 400;
+        font-family: inherit;
         font-size: 16px;
         line-height: 150%;
         color: $color-font-second;
@@ -239,6 +250,12 @@ const deleteSearch = () => {
         background-color: $color-light-blue;
         border-radius: 8px;
         color: $color-white;
+
+        &:hover,
+        &:focus {
+          outline: none;
+          opacity: 0.7;
+        }
       }
     }
   }
@@ -255,11 +272,16 @@ const deleteSearch = () => {
     padding: 15.5px 0;
 
     .menu__link {
-      font-family: "Inter";
-      font-weight: 400;
-      font-size: 14px;
+      display: block;
+      font-family: inherit;
       line-height: 121%;
       color: #393939;
+
+      &:hover,
+      &:focus {
+        color: $color-font-hover;
+        transition: all 0.5s;
+      }
     }
   }
 

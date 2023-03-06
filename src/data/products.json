@@ -46,5 +46,53 @@
         "quantity": 4,
         "isHit": true,
         "discount": "25%" 
+    },
+    {
+        "id": 5,
+        "brand": "Бренд",
+        "category": "Название категории",
+        "image": "image.jpg",
+        "name": "Полное название товара в несколько строк для вида с обрывом в конце...",
+        "price": "5 990 ₽",
+        "priceWithDiscount": "5 990 ₽",
+        "quantity": 4,
+        "isHit": true,
+        "discount": "25%" 
+    },
+    {
+        "id": 6,
+        "brand": "Бренд",
+        "category": "Название категории",
+        "image": "image.jpg",
+        "name": "Полное название товара в несколько строк для вида с обрывом в конце...",
+        "price": "5 990 ₽",
+        "priceWithDiscount": "5 990 ₽",
+        "quantity": 4,
+        "isHit": true,
+        "discount": "25%" 
+    },
+    {
+        "id": 7,
+        "brand": "Бренд",
+        "category": "Название категории",
+        "image": "image.jpg",
+        "name": "Полное название товара в несколько строк  Полное название товара в несколько строк для вида с обрывом в конце...",
+        "price": "5 990 ₽",
+        "priceWithDiscount": "5 990 ₽",
+        "quantity": 0,
+        "isHit": true,
+        "discount": "25%" 
+    },
+    {
+        "id": 8,
+        "brand": "Бренд",
+        "category": "Название категории",
+        "image": "image.jpg",
+        "name": "Полное название товара в несколько строк для вида с обрывом в конце...",
+        "price": "5 990 ₽",
+        "priceWithDiscount": "5 990 ₽",
+        "quantity": 4,
+        "isHit": true,
+        "discount": "25%" 
     }
 ]

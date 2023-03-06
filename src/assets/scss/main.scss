@@ -47,9 +47,8 @@
 
 body {
   display: flex;
-  // overflow: hidden;
   flex-direction: column;
-  // height: 100 vh;
+  height: 100%;
   background: $color-white;
   color: $color-font-main;
   font-family: 'PT Sans', 'Arial', sans-serif;
@@ -95,9 +94,6 @@ img {
   justify-content: center;
   align-items: center;
   min-height: 38px;
-  // padding: 12px 0;
-  // border: 1px solid $color-light-blue;
-  // border-radius: 4px;
 
   font-family: 'PT Sans';
   font-weight: 700;
@@ -106,17 +102,6 @@ img {
 }
 
 .visually-hidden {
-  // position: absolute;
-  // overflow: hidden;
-  // clip: rect(0 0 0 0);
-  // width: 1px;
-  // height: 1px;
-  // margin: -1px;
-  // padding: 0;
-  // white-space: nowrap;
-  // border: 0;
-  // clip-path: inset(100%);
-
   position: absolute;
   clip: rect(0 0 0 0);
   width: 1px;

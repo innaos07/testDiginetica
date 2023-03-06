@@ -4,7 +4,7 @@
     <main>
       <div class="container">
         <div class="content">
-           <app-layout-sidaber />
+           <app-layout-sidebar />
            <slot/>
         </div>
       </div>
@@ -15,13 +15,11 @@
 
 <script setup>
 import AppLayoutHeader from "./AppLayoutHeader.vue";
-import AppLayoutSidaber from "./AppLayoutSidaber.vue";
+import AppLayoutSidebar from "./AppLayoutSidebar.vue";
 </script>
 
 <style>
 .content {
   display: flex;
-  
-
 }
 </style>

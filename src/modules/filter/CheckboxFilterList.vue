@@ -1,11 +1,12 @@
 <template>
-  <ul class="checkbox-filter__list">
+  <ul class="checkbox-filter__list  item-filter__scroll">
     <li v-for="item in checkboxFilterList" :key="item.id" class="checkbox-filter__item">
       <input
         type="checkbox"
         :value="item.value"
         :id="item.value"
         class="visually-hidden"
+        @input="emit('update:modelValue', item.value)"
       />
       <label :for="item.value"> {{ item.name }}</label>
       <span class="item-filter__quantity">{{ item.quantity }}</span>
@@ -18,8 +19,15 @@ const props = defineProps ({
   checkboxFilterList: {
     type: Array,
     default: () => [],
-  }
+  },
+  modelValue: {
+    type: String,
+    required: "",
+  },
+
 })
+const emit = defineEmits(["update:modelValue"]);
+
 </script>
 
 <style lang="scss">

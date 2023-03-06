@@ -7,7 +7,7 @@
 <script setup>
 import { reactive } from "vue";
 import products from "@/data/products.json"
-import AppLayout from "@/layouts/AppLayoutDefault.vue";
+import AppLayout from "@/layouts/AppLayoutMain.vue";
 import CatalogView from "@/views/CatalogView.vue"
 
 const store = reactive ({

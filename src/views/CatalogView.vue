@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import CatalogItem from "../components/catalog/CatalogItem.vue";
+import CatalogItem from "@/modules/catalog/CatalogItem.vue";
 
 const props = defineProps({
   catalogList: {
@@ -45,6 +45,8 @@ const props = defineProps({
   }
   @media (max-width: $md-width) {
     .catalog__list {
+      overflow-y: scroll;
+      height: 100%;
       row-gap: 16px;
     }
     .catalog__category {

@@ -33,21 +33,14 @@
           <span class="item-catalog__price item-catalog__price--discount">{{ item.priceWithDiscount }}</span>
           <span class="item-catalog__price item-catalog__price--basic">{{ item.price }}</span>
         </div>
-
-        <a 
-          href="#" 
-          v-if="item.quantity" 
-          class="item-catalog__btn btn"
-        >
-          Купить
-        </a>
-        <button v-else class="item-catalog__btn item-catalog__btn--empty btn">Сообщить о поступлении</button>
-      </div>
+        <app-button :quantity = "item.quantity"></app-button>
+    </div>
     </div>
   </li>
 </template>
 
 <script setup>
+import AppButton from "@/components/AppButton.vue"
 const props = defineProps({
   item: {
     type: Object,
@@ -186,22 +179,6 @@ const getImage = (image) => {
         line-height: 14px;
         color: $color-font-second;
         text-decoration: line-through;
-      }
-    }
-
-    .item-catalog__btn {
-      padding: 12px 16px;
-      border: 1px solid $color-brand;
-      border-radius: 4px;
-      background-color: $color-white;
-      color: $color-brand;
-      cursor: pointer;
-
-      &--empty {
-        width: 100%;
-        margin-top: 46px;
-        border: 1px solid $color-font-second;
-        color: $color-font-second;
       }
     }
   }
