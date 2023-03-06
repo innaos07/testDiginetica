@@ -32,39 +32,38 @@
 </template>
 
 <script setup>
-  const props = defineProps({
-    categoryList: {
-      type: Array,
-      default: () => [],
-    },
-  });
+const props = defineProps({
+  categoryList: {
+    type: Array,
+    default: () => [],
+  },
+});
 </script>
 
 <style lang="scss">
 @import "@/assets/scss/variables.scss";
 
 .category-filter {
-    .category-filter__info,
-    .subcategory-filter__info {
-      display: flex;
-      justify-content: space-between;
+  .category-filter__info,
+  .subcategory-filter__info {
+    display: flex;
+    justify-content: space-between;
 
-      &:hover,
-      &:focus {
-        border-radius: 5px;
-        background: $color-font-bg;
-        transition: all 0.5s;
-      }
-    }
-
-    .category-filter__info {
-      padding: 7px 8px;
-    }
-
-    .subcategory-filter__info {
-      padding: 7px 8px;
-      padding-left: 32px;
+    &:hover,
+    &:focus {
+      border-radius: 5px;
+      background: $color-font-bg;
+      transition: all 0.5s;
     }
   }
 
+  .category-filter__info {
+    padding: 7px 8px;
+  }
+
+  .subcategory-filter__info {
+    padding: 7px 8px;
+    padding-left: 32px;
+  }
+}
 </style>

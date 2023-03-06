@@ -2,6 +2,7 @@
   <fieldset class="filter__item item-filter">
     <div class="filter__size size-filter">
       <header-filter :isActiveInput="isActiveInput">Размер</header-filter>
+      
       <checkbox-filter-list
         :checkboxFilterList="sizeList"
         v-model="checkList"

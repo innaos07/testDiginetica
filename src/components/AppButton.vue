@@ -2,7 +2,8 @@
   <a 
     href="#" 
     v-if="quantity" 
-    class="item-catalog__btn btn"> 
+    class="item-catalog__btn btn"
+  > 
     Купить 
   </a>
   <button 
@@ -45,6 +46,10 @@ const props = defineProps({
     background-color: $color-brand;
     color: $color-white;
     transition: all 0.5s;
+  }
+
+  @media (max-width: $xxl-width) {
+    margin-top: auto;
   }
 }
 </style>

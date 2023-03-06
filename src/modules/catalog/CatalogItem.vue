@@ -9,38 +9,25 @@
         class="item-catalog__image"
         :class="{ 'item-catalog__image--empty': item.quantity == 0 }"
       >
-        <span 
-          v-if="item.isHit" 
-          class="item-catalog__hit"
-        >
-          Хит продаж
-        </span>
-        <span 
-          v-if="item.discount" 
-          class="item-catalog__discount"
-        > 
-        {{  item.discount }}
-        </span>
+        <span v-if="item.isHit" class="item-catalog__hit"> Хит продаж </span>
+        <span v-if="item.discount" class="item-catalog__discount"> {{ item.discount }} </span>
         <img :src="getImage(item.image)" />
       </a>
       <div class="item-catalog__info">
         <p class="item-catalog__brand">{{ item.brand }}</p>
         <a href="#" class="item-catalog__name">{{ item.name }}</a>
-        <div 
-          v-if="item.quantity" 
-          class="item-catalog__prices"
-        >
+        <div v-if="item.quantity" class="item-catalog__prices">
           <span class="item-catalog__price item-catalog__price--discount">{{ item.priceWithDiscount }}</span>
           <span class="item-catalog__price item-catalog__price--basic">{{ item.price }}</span>
         </div>
-        <app-button :quantity = "item.quantity"></app-button>
-    </div>
+        <app-button :quantity="item.quantity"></app-button>
+      </div>
     </div>
   </li>
 </template>
 
 <script setup>
-import AppButton from "@/components/AppButton.vue"
+import AppButton from "@/components/AppButton.vue";
 const props = defineProps({
   item: {
     type: Object,
@@ -52,7 +39,6 @@ const getImage = (image) => {
   return new URL(`../../assets/image/${image}`, import.meta.url).href;
 };
 </script>
-
 
 <style lang="scss">
 @import "@/assets/scss/variables.scss";
@@ -105,7 +91,6 @@ const getImage = (image) => {
 
     .item-catalog__hit {
       position: absolute;
-
       top: 12px;
       left: 12px;
       display: block;
@@ -187,16 +172,6 @@ const getImage = (image) => {
     .item-catalog {
       max-width: 213px;
     }
-
-    .item-catalog__info {
-      .item-catalog__btn {
-        margin-top: auto;
-
-        &--empty {
-          margin-top: 30px;
-        }
-      }
-    }
   }
 
   @media (max-width: $xl-width) {
@@ -218,7 +193,7 @@ const getImage = (image) => {
     flex: 0 0 33.33%;
     padding: 0 6px;
 
-    .item-catalog__image, 
+    .item-catalog__image,
     .item-catalog__name,
     .item-catalog__prices {
       margin-bottom: 12px;

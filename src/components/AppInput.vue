@@ -25,7 +25,6 @@ defineProps({
 const emit = defineEmits(["update:modelValue"]);
 </script>
 
-
 <style lang="scss">
 @import "@/assets/scss/variables.scss";
 

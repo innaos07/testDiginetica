@@ -2,7 +2,11 @@
   <section class="catalog">
     <h2 class="catalog__category">Название категории</h2>
     <ul class="catalog__list">
-      <catalog-item v-for="item in catalogList" :key="item.id" :item="item" />
+      <catalog-item 
+        v-for="item in catalogList" 
+        :key="item.id" 
+        :item="item" 
+      />
     </ul>
   </section>
 </template>
@@ -33,22 +37,15 @@ const props = defineProps({
     flex-wrap: wrap;
     margin: 0 -12px;
     row-gap: 24px;
-
-    // @media (max-width: $md-width) {
-    //   row-gap: 16px;
-
-    // }
-
-    // @media (max-width: $sm-width) {
-    //   justify-content: center;
-    // }
   }
+
   @media (max-width: $md-width) {
     .catalog__list {
       overflow-y: scroll;
       height: 100%;
       row-gap: 16px;
     }
+    
     .catalog__category {
       display: block;
       padding-left: 8px;
@@ -59,7 +56,7 @@ const props = defineProps({
     }
   }
 
-  @media (max-width: $sm-width) {
+  @media (max-width: $ssm-width) {
     .catalog__list {
       justify-content: center;
     }

@@ -50,8 +50,14 @@
 
         <nav class="header__menu menu">
           <ul class="menu__list">
-            <li class="menu__item" v-for="item in menuList" :key="item.id">
-              <a :href="item.link" class="menu__link">{{ item.name }}</a>
+            <li 
+              class="menu__item" 
+              v-for="item in menuList" 
+              :key="item.id"
+            >
+              <a :href="item.link" class="menu__link">
+                {{ item.name }}
+              </a>
             </li>
           </ul>
         </nav>
@@ -79,6 +85,7 @@ const menuList = [
     link: "#",
   },
 ];
+
 const isActiveInput = ref(false);
 const search = ref("");
 
@@ -95,6 +102,7 @@ const deleteSearch = () => {
 
 <style lang="scss">
 @import "@/assets/scss/variables.scss";
+
 .header {
   margin-bottom: 24px;
   font-family: "Inter";

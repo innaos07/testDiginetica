@@ -2,16 +2,12 @@
   <fieldset class="filter__item item-filter">
     <div class="filter__brand brand-filter">
       <header-filter :isActiveInput="isActiveSearchBrand">Очистить</header-filter>
+      
       <div class="brand-filter__search">
-        <app-input
-          v-model="searchBrand"
-          :isSearchFail="isSearchFail"
-        />
+        <app-input v-model="searchBrand" :isSearchFail="isSearchFail" />
         <button
           class="brand-filter__btn-delete"
-          :class="{
-            'brand-filter__btn-delete--active': isActiveSearchBrand,
-          }"
+          :class="{ 'brand-filter__btn-delete--active': isActiveSearchBrand }"
           @click="deleteSearchBrand"
         >
           <svg
@@ -30,10 +26,12 @@
           </svg>
         </button>
       </div>
-      <p v-if="isSearchFail" class="brand-filter__fail-text">
-        По вашему запросу ничего не найдено
-      </p>
-      <checkbox-filter-list :checkboxFilterList="brandList" v-model="checkList"/>
+
+      <p v-if="isSearchFail" class="brand-filter__fail-text"> По вашему запросу ничего не найдено </p>
+      <checkbox-filter-list 
+        :checkboxFilterList="brandList" 
+        v-model="checkList"
+      />
     </div>
   </fieldset>
 </template>
@@ -43,17 +41,18 @@ import { ref, watch } from "vue";
 import HeaderFilter from "./HeaderFilter.vue";
 import CheckboxFilterList from "@/modules/filter/CheckboxFilterList.vue";
 import AppInput from "../../components/AppInput.vue";
+
 const props = defineProps({
   brandList: {
     type: Array,
     default: () => [],
   },
 });
+
 const isActiveSearchBrand = ref(false);
 const isSearchFail = ref(false);
 const searchBrand = ref("");
-const checkList = ref([])
-
+const checkList = ref([]);
 
 watch(searchBrand, () => {
   searchBrand.value
@@ -124,49 +123,6 @@ const deleteSearchBrand = () => {
     .brand-filter__fail-text {
       margin-bottom: 16px;
     }
-
-    // .brand-filter__list {
-    //   display: flex;
-    //   flex-direction: column;
-    //   row-gap: 12px;
-
-    //    .brand-filter__item {
-    //     position: relative;
-    //     display: flex;
-    //     justify-content: space-between;
-
-    //     padding-top: 2px;
-    //     padding-bottom: 2px;
-    //     padding-left: 32px;
-    //     padding-right: 16px;
-
-    //       input~label::before {
-    //         position: absolute;
-    //         content: '';
-    //         top: 0;
-    //         left: 0;
-    //         width: 20px;
-    //         height: 20px;
-    //         border: 1px solid $color-border;
-    //         border-radius: 3px;
-    //     }
-
-    //     input:hover ~ label::before,
-    //     input:focus ~ label::before {
-    //       border: 1px solid $color-brand;
-    //       transition: all 0.5s;
-    //     }
-
-    //     input:checked~label::before {
-    //       background: $color-brand;
-    //       border: 1px solid $color-brand;
-    //       background-image: url('@/assets/image/check-mark.svg');
-    //       background-repeat: no-repeat;
-    //       background-position: center;
-    //       transition: all 0s;
-    //     }
-    //   }
-    // }
   }
 }
 </style>
